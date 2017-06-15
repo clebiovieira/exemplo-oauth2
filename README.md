@@ -33,6 +33,25 @@ Para logar com o exemplo do usuario admin:
 curl -X POST -H "Accept: application/json" -d "client_id=exemploaplicativocliente&client_secret=9834ba657bb2c60b5bb53de6f4201905&grant_type=password&username=admin&password=admin123" http://localhost:8080/exemplo-oauth2/endpoints/seguranca/logar
 ```
 
+### Acessando com Postman
+```
+BODY como x-www-from-urlencoded:
+client_secret:9834ba657bb2c60b5bb53de6f4201905
+client_id:exemploaplicativocliente
+
+HEADER:
+Accept:application/json
+Content-Type:application/x-www-form-urlencoded
+
+PARAMS:
+grant_type:password
+username:admin
+password:admin123
+```
+
+
+
+
 Mude a propriedade "username" e "password" para acesso com o outro usuario. Esse comando irá retornar um JSON contendo o Token de acesso aos recursos, que você deverá usá-lo nas demais chamadas.
 
 ### Teste de acessos a recursos
@@ -48,6 +67,7 @@ Acesso a um recurso geral (os dois usuarios de testes teriam acesso):
 ```
 curl -X GET -H "Accept: application/json" -H "Authorization: Bearer TOKEN" http://localhost:8080/exemplo-oauth2/endpoints/home/acesso/geral --verbose
 ```
+
 
 Acesso a um recurso somente de visitante (e admin tambem poderia):
 ```

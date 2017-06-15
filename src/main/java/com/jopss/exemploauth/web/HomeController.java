@@ -30,7 +30,7 @@ public class HomeController extends ExemploOAuthController{
         @Privado(role=RoleEnum.ROLE_ADMIN)
         @ResponseBody
         @RequestMapping(value = "/acesso/admin", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public String acessoAdmin() {
+	public String acessoAdmin() {        		
                 return "Admin: Acesso Permitido!";
 	}
 }
